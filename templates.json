@@ -22,6 +22,7 @@
             ]
         },
         {
+            "id": 71,
             "type": 1,
             "name": "droppy",
             "title": "Droppy",
@@ -177,6 +178,7 @@
             "command": "/bin/bash"
         },
         {
+            "id": 70,
             "categories": [
                 "Proxy",
                 "Tools"
