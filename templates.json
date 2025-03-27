@@ -1968,12 +1968,6 @@
                     "label": "PASSWORD",
                     "default": "",
                     "description": "Optionally set a password for the gui."
-                },
-                {
-                    "name": "CLI_ARGS",
-                    "label": "CLI_ARGS",
-                    "default": "",
-                    "description": "Optionally pass cli start arguments to calibre."
                 }
             ],
             "ports": [
