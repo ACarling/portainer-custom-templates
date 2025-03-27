@@ -1973,7 +1973,6 @@
                     "name": "CLI_ARGS",
                     "label": "CLI_ARGS",
                     "default": "",
-                    "preset": true,
                     "description": "Optionally pass cli start arguments to calibre."
                 }
             ],
