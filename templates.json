@@ -1875,50 +1875,50 @@
         {
             "id": 72,
             "categories": [
-              "Other",
-              "Vpn"
+                "Other",
+                "Vpn"
             ],
             "description": "Fast VPN Server with easy to use User Interface",
             "env": [
-              {
-                "default": "example.domain.com",
-                "description": "Set here your DDNS domain",
-                "label": "WG_HOST",
-                "name": "WG_HOST"
-              },
-              {
-                "default": "ENTER AN ADMIN PASSWORD",
-                "description": "Leave blank to access WebUI without loggin",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-              },
-              {
-                "default": "51820",
-                "label": "WG_PORT",
-                "name": "WG_PORT"
-              },
-              {
-                "default": "1.1.1.1",
-                "label": "WG_DEFAULT_DNS",
-                "name": "WG_DEFAULT_DNS"
-              },
-              {
-                "default": "10.8.0.x",
-                "label": "WG_DEFAULT_ADDRESS",
-                "name": "WG_DEFAULT_ADDRESS"
-              },
-              {
-                "default": "0.0.0.0/0, ::/0",
-                "label": "WG_ALLOWED_IPS",
-                "name": "WG_ALLOWED_IPS"
-              }
+                {
+                    "default": "example.domain.com",
+                    "description": "Set here your DDNS domain",
+                    "label": "WG_HOST",
+                    "name": "WG_HOST"
+                },
+                {
+                    "default": "ENTER AN ADMIN PASSWORD",
+                    "description": "Leave blank to access WebUI without loggin",
+                    "label": "PASSWORD",
+                    "name": "PASSWORD"
+                },
+                {
+                    "default": "51820",
+                    "label": "WG_PORT",
+                    "name": "WG_PORT"
+                },
+                {
+                    "default": "1.1.1.1",
+                    "label": "WG_DEFAULT_DNS",
+                    "name": "WG_DEFAULT_DNS"
+                },
+                {
+                    "default": "10.8.0.x",
+                    "label": "WG_DEFAULT_ADDRESS",
+                    "name": "WG_DEFAULT_ADDRESS"
+                },
+                {
+                    "default": "0.0.0.0/0, ::/0",
+                    "label": "WG_ALLOWED_IPS",
+                    "name": "WG_ALLOWED_IPS"
+                }
             ],
             "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/wireguard.png",
             "name": "wg-easy",
             "platform": "linux",
             "repository": {
-              "stackfile": "stack/wireguard-easy.yml",
-              "url": "https://github.com/pi-hosted/pi-hosted"
+                "stackfile": "stack/wireguard-easy.yml",
+                "url": "https://github.com/pi-hosted/pi-hosted"
             },
             "title": "Wireguard Server",
             "type": 3,
@@ -1929,59 +1929,161 @@
             "id": 73,
             "type": 1,
             "categories": [
-              "Libraryserver"
+                "Libraryserver"
             ],
             "title": "Calibre",
             "name": "Calibre",
             "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/calibre/config</p>",
-            "description": "Calibre is a powerful and easy to use e-book manager. Users say it\u2019s outstanding and a must-have. It\u2019ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It\u2019s also completely free and open source and great for both casual users and computer experts.",
+            "description": "Calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
             "platform": "linux",
             "logo": "https://github.com/kovidgoyal/calibre/raw/master/resources/images/lt.png",
             "image": "linuxserver/calibre:latest",
             "env": [
-              {
-                "name": "PUID",
-                "label": "PUID",
-                "default": "1024",
-                "description": "for GroupID"
-              },
-              {
-                "name": "PGID",
-                "label": "PGID",
-                "default": "100",
-                "description": "for UserID"
-              },
-              {
-                "name": "TZ",
-                "label": "TZ",
-                "default": "Europe/Amsterdam",
-                "description": "Specify a timezone to use for example Europe/Amsterdam"
-              },
-              {
-                "name": "PASSWORD",
-                "label": "PASSWORD",
-                "default": "",
-                "description": "Optionally set a password for the gui."
-              },
-              {
-                "name": "CLI_ARGS",
-                "label": "CLI_ARGS",
-                "default": "",
-                "description": "Optionally pass cli start arguments to calibre."
-              }
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1024",
+                    "description": "for GroupID"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "100",
+                    "description": "for UserID"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "Europe/Amsterdam",
+                    "description": "Specify a timezone to use for example Europe/Amsterdam"
+                },
+                {
+                    "name": "PASSWORD",
+                    "label": "PASSWORD",
+                    "default": "",
+                    "description": "Optionally set a password for the gui."
+                },
+                {
+                    "name": "CLI_ARGS",
+                    "label": "CLI_ARGS",
+                    "default": "",
+                    "description": "Optionally pass cli start arguments to calibre."
+                }
             ],
             "ports": [
-              "8080:8080/tcp",
-              "8081:8081/tcp"
+                "8080:8080/tcp",
+                "8081:8081/tcp"
             ],
             "volumes": [
-              {
-                "container": "/config",
-                "bind": "/volume1/docker/calibre/config"
-              }
+                {
+                    "container": "/config",
+                    "bind": "/volume1/docker/calibre/config"
+                }
             ],
             "restart_policy": "unless-stopped",
             "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-          }      
+        },
+        {
+            "id": 73,
+            "type": 1,
+            "categories": [
+                "Libraryserver"
+            ],
+            "title": "Calibre",
+            "name": "Calibre",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/calibre/config</p>",
+            "description": "Calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
+            "platform": "linux",
+            "logo": "https://github.com/kovidgoyal/calibre/raw/master/resources/images/lt.png",
+            "image": "linuxserver/calibre:latest",
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1024",
+                    "description": "for GroupID"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "100",
+                    "description": "for UserID"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "Europe/Amsterdam",
+                    "description": "Specify a timezone to use for example Europe/Amsterdam"
+                },
+                {
+                    "name": "PASSWORD",
+                    "label": "PASSWORD",
+                    "default": "",
+                    "description": "Optionally set a password for the gui."
+                },
+                {
+                    "name": "CLI_ARGS",
+                    "label": "CLI_ARGS",
+                    "default": "",
+                    "description": "Optionally pass cli start arguments to calibre."
+                }
+            ],
+            "ports": [
+                "8080:8080/tcp",
+                "8081:8081/tcp"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/volume1/docker/calibre/config"
+                }
+            ],
+            "restart_policy": "unless-stopped",
+            "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
+        },
+        {
+            "id": 74,
+            "type": 1,
+            "categories": [
+                "DDNS"
+            ],
+            "title": "CarlingDDNS",
+            "name": "CarlingDDNS",
+            "note": "",
+            "description": "DDNS for route53",
+            "platform": "linux",
+            "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdTzcBn27S1AKSS4es6aWZCtpGXLH1D7PiPA&s",
+            "image": "ghcr.io/acarling/ddns:latest",
+            "env": [
+                {
+                    "name": "AWS_ACCESS_KEY",
+                    "label": "AWS_ACCESS_KEY",
+                    "default": "",
+                    "description": "IAM access key for user with GetChange,ListHostedZones,ChangeResourceRecordSets, and ListResourceRecordSets permissions"
+                },
+                {
+                    "name": "AWS_ACCESS_SECRET",
+                    "label": "AWS_ACCESS_SECRET",
+                    "default": "",
+                    "description": ""
+                },
+                {
+                    "name": "A_RECORD_NAME",
+                    "label": "A_RECORD_NAME",
+                    "default": "home.acarling.au",
+                    "description": "A record name which will be updated on IP change"
+                },
+                {
+                    "name": "POLL_TIMEOUT_SECONDS",
+                    "label": "POLL_TIMEOUT_SECONDS",
+                    "default": "5",
+                    "description": "Number of seconds between requests to public facing IP address readback api"
+                }
+            ],
+            "ports": [],
+            "volumes": [],
+            "restart_policy": "unless-stopped",
+            "maintainer": " Aidan Carling"
+        }
     ]
 }
