@@ -22,107 +22,6 @@
             ]
         },
         {
-            "id": 71,
-            "type": 1,
-            "name": "droppy",
-            "title": "Droppy",
-            "description": "Droppy is a self-hosted file storage server",
-            "logo": "https://mediadepot.github.io/templates/img/filebrowser-icon.png",
-            "image": "silverwind/droppy:latest",
-            "categories": [
-                "Tools",
-                "Networkweb",
-                "Networkother"
-            ],
-            "ports": [
-                "8989/tcp"
-            ],
-            "volumes": [
-                {
-                    "container": "/files/tvshows",
-                    "bind": "/media/storage/tvshows"
-                },
-                {
-                    "container": "/files/movies",
-                    "bind": "/media/storage/movies"
-                },
-                {
-                    "container": "/files/music",
-                    "bind": "/media/storage/music"
-                },
-                {
-                    "container": "/files/photos",
-                    "bind": "/media/storage/photos"
-                },
-                {
-                    "container": "/files/ebooks",
-                    "bind": "/media/storage/ebooks"
-                },
-                {
-                    "container": "/files/documents",
-                    "bind": "/media/storage/documents"
-                },
-                {
-                    "container": "/files/software",
-                    "bind": "/media/storage/software"
-                },
-                {
-                    "container": "/files/downloads",
-                    "bind": "/media/storage/downloads"
-                },
-                {
-                    "container": "/files/blackhole",
-                    "bind": "/media/temp/blackhole"
-                },
-                {
-                    "container": "/files/processing",
-                    "bind": "/media/temp/processing"
-                },
-                {
-                    "container": "/config",
-                    "bind": "/opt/mediadepot/apps/droppy"
-                }
-            ],
-            "env": [
-                {
-                    "name": "GID",
-                    "label": "GID",
-                    "default": "15000",
-                    "preset": true
-                },
-                {
-                    "name": "UID",
-                    "label": "UID",
-                    "default": "15000",
-                    "preset": true
-                },
-                {
-                    "name": "TZ",
-                    "label": "TZ",
-                    "default": "America/Los_Angeles"
-                }
-            ],
-            "labels": [
-                {
-                    "name": "traefik.enable",
-                    "value": "true"
-                },
-                {
-                    "name": "traefik.http.services.droppy.loadbalancer.server.port",
-                    "value": "8989"
-                },
-                {
-                    "name": "traefik.http.routers.droppy.entrypoints",
-                    "value": "websecure"
-                },
-                {
-                    "name": "traefik.http.routers.droppy.tls.certresolver",
-                    "value": "mydnschallenge"
-                }
-            ],
-            "maintainer": " https://github.com/mediadepot/templates/"
-        },
-        {
             "id": 2,
             "type": 1,
             "title": "Registry (cache)",
@@ -176,44 +75,6 @@
             "image": "node:latest",
             "interactive": true,
             "command": "/bin/bash"
-        },
-        {
-            "id": 70,
-            "categories": [
-                "Proxy",
-                "Tools"
-            ],
-            "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-            "image": "jc21/nginx-proxy-manager",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
-            "name": "nginx-proxy-manager",
-            "platform": "linux",
-            "env": [
-                {
-                    "label": "DB_SQLITE_FILE",
-                    "name": "DB_SQLITE_FILE",
-                    "default": "/data/database.sqlite"
-                }
-            ],
-            "ports": [
-                "80:80/tcp",
-                "81:81/tcp",
-                "443:443/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Nginx Proxy Manager",
-            "type": 1,
-            "volumes": [
-                {
-                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/data",
-                    "container": "/data"
-                },
-                {
-                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/letsencrypt",
-                    "container": "/etc/letsencrypt"
-                }
-            ],
-            "maintainer": " https://github.com/Qballjos/portainer_templates/"
         },
         {
             "id": 5,
@@ -1871,6 +1732,256 @@
                 "url": "https://github.com/portainer/templates",
                 "stackfile": "edge/anyviz/docker-compose.yml"
             }
-        }
+        },
+        {
+            "id": 70,
+            "categories": [
+                "Proxy",
+                "Tools"
+            ],
+            "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+            "image": "jc21/nginx-proxy-manager",
+            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
+            "name": "nginx-proxy-manager",
+            "platform": "linux",
+            "env": [
+                {
+                    "label": "DB_SQLITE_FILE",
+                    "name": "DB_SQLITE_FILE",
+                    "default": "/data/database.sqlite"
+                }
+            ],
+            "ports": [
+                "80:80/tcp",
+                "81:81/tcp",
+                "443:443/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "title": "Nginx Proxy Manager",
+            "type": 1,
+            "volumes": [
+                {
+                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/data",
+                    "container": "/data"
+                },
+                {
+                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/letsencrypt",
+                    "container": "/etc/letsencrypt"
+                }
+            ],
+            "maintainer": " https://github.com/Qballjos/portainer_templates/"
+        },
+        {
+            "id": 71,
+            "type": 1,
+            "name": "droppy",
+            "title": "Droppy",
+            "description": "Droppy is a self-hosted file storage server",
+            "logo": "https://mediadepot.github.io/templates/img/filebrowser-icon.png",
+            "image": "silverwind/droppy:latest",
+            "categories": [
+                "Tools",
+                "Networkweb",
+                "Networkother"
+            ],
+            "ports": [
+                "8989/tcp"
+            ],
+            "volumes": [
+                {
+                    "container": "/files/tvshows",
+                    "bind": "/media/storage/tvshows"
+                },
+                {
+                    "container": "/files/movies",
+                    "bind": "/media/storage/movies"
+                },
+                {
+                    "container": "/files/music",
+                    "bind": "/media/storage/music"
+                },
+                {
+                    "container": "/files/photos",
+                    "bind": "/media/storage/photos"
+                },
+                {
+                    "container": "/files/ebooks",
+                    "bind": "/media/storage/ebooks"
+                },
+                {
+                    "container": "/files/documents",
+                    "bind": "/media/storage/documents"
+                },
+                {
+                    "container": "/files/software",
+                    "bind": "/media/storage/software"
+                },
+                {
+                    "container": "/files/downloads",
+                    "bind": "/media/storage/downloads"
+                },
+                {
+                    "container": "/files/blackhole",
+                    "bind": "/media/temp/blackhole"
+                },
+                {
+                    "container": "/files/processing",
+                    "bind": "/media/temp/processing"
+                },
+                {
+                    "container": "/config",
+                    "bind": "/opt/mediadepot/apps/droppy"
+                }
+            ],
+            "env": [
+                {
+                    "name": "GID",
+                    "label": "GID",
+                    "default": "15000",
+                    "preset": true
+                },
+                {
+                    "name": "UID",
+                    "label": "UID",
+                    "default": "15000",
+                    "preset": true
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "America/Los_Angeles"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "traefik.enable",
+                    "value": "true"
+                },
+                {
+                    "name": "traefik.http.services.droppy.loadbalancer.server.port",
+                    "value": "8989"
+                },
+                {
+                    "name": "traefik.http.routers.droppy.entrypoints",
+                    "value": "websecure"
+                },
+                {
+                    "name": "traefik.http.routers.droppy.tls.certresolver",
+                    "value": "mydnschallenge"
+                }
+            ],
+            "maintainer": " https://github.com/mediadepot/templates/"
+        },
+        {
+            "id": 72,
+            "categories": [
+              "Other",
+              "Vpn"
+            ],
+            "description": "Fast VPN Server with easy to use User Interface",
+            "env": [
+              {
+                "default": "example.domain.com",
+                "description": "Set here your DDNS domain",
+                "label": "WG_HOST",
+                "name": "WG_HOST"
+              },
+              {
+                "default": "ENTER AN ADMIN PASSWORD",
+                "description": "Leave blank to access WebUI without loggin",
+                "label": "PASSWORD",
+                "name": "PASSWORD"
+              },
+              {
+                "default": "51820",
+                "label": "WG_PORT",
+                "name": "WG_PORT"
+              },
+              {
+                "default": "1.1.1.1",
+                "label": "WG_DEFAULT_DNS",
+                "name": "WG_DEFAULT_DNS"
+              },
+              {
+                "default": "10.8.0.x",
+                "label": "WG_DEFAULT_ADDRESS",
+                "name": "WG_DEFAULT_ADDRESS"
+              },
+              {
+                "default": "0.0.0.0/0, ::/0",
+                "label": "WG_ALLOWED_IPS",
+                "name": "WG_ALLOWED_IPS"
+              }
+            ],
+            "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/wireguard.png",
+            "name": "wg-easy",
+            "platform": "linux",
+            "repository": {
+              "stackfile": "stack/wireguard-easy.yml",
+              "url": "https://github.com/pi-hosted/pi-hosted"
+            },
+            "title": "Wireguard Server",
+            "type": 3,
+            "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/WeeJeWel/wg-easy/\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/WeeJeWel/wg-easy/#1-install-docker\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/#1-install-docker</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/wireguard-install.md\" target=\"_blank\">wireguard-install.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yB_jAumIxOg target=\"_blank\">Novaspirit Tech - Beginners Guide to WireGuard Docker and Installing Pi-OS 64bit</a><br><br>",
+            "maintainer": " https://github.com/novaspirit/pi-hosted/"
+        },
+        {
+            "id": 73,
+            "type": 1,
+            "categories": [
+              "Libraryserver"
+            ],
+            "title": "Calibre",
+            "name": "Calibre",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/calibre/config</p>",
+            "description": "Calibre is a powerful and easy to use e-book manager. Users say it\u2019s outstanding and a must-have. It\u2019ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It\u2019s also completely free and open source and great for both casual users and computer experts.",
+            "platform": "linux",
+            "logo": "https://github.com/kovidgoyal/calibre/raw/master/resources/images/lt.png",
+            "image": "linuxserver/calibre:latest",
+            "env": [
+              {
+                "name": "PUID",
+                "label": "PUID",
+                "default": "1024",
+                "description": "for GroupID"
+              },
+              {
+                "name": "PGID",
+                "label": "PGID",
+                "default": "100",
+                "description": "for UserID"
+              },
+              {
+                "name": "TZ",
+                "label": "TZ",
+                "default": "Europe/Amsterdam",
+                "description": "Specify a timezone to use for example Europe/Amsterdam"
+              },
+              {
+                "name": "PASSWORD",
+                "label": "PASSWORD",
+                "default": "",
+                "description": "Optionally set a password for the gui."
+              },
+              {
+                "name": "CLI_ARGS",
+                "label": "CLI_ARGS",
+                "default": "",
+                "description": "Optionally pass cli start arguments to calibre."
+              }
+            ],
+            "ports": [
+              "8080:8080/tcp",
+              "8081:8081/tcp"
+            ],
+            "volumes": [
+              {
+                "container": "/config",
+                "bind": "/volume1/docker/calibre/config"
+              }
+            ],
+            "restart_policy": "unless-stopped",
+            "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
+          }      
     ]
 }
