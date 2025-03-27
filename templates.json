@@ -1958,6 +1958,12 @@
                     "description": "Specify a timezone to use for example Europe/Amsterdam"
                 },
                 {
+                    "name": "CUSTOM_USER",
+                    "label": "CUSTOM_USER",
+                    "default": "",
+                    "description": "Set username for the gui."
+                },
+                {
                     "name": "PASSWORD",
                     "label": "PASSWORD",
                     "default": "",
