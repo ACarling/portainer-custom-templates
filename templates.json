@@ -2046,44 +2046,19 @@
             "platform": "linux",
             "logo": "https://docs.ntfy.sh/static/img/ntfy.png",
             "image": "binwiederhier/ntfy",
-            "env": [
-                {
-                    "name": "AWS_ACCESS_KEY_ID",
-                    "label": "AWS_ACCESS_KEY_ID",
-                    "default": "",
-                    "description": "IAM access key for user with GetChange,ListHostedZones,ChangeResourceRecordSets, and ListResourceRecordSets permissions"
-                },
-                {
-                    "name": "AWS_SECRET_ACCESS_KEY",
-                    "label": "AWS_SECRET_ACCESS_KEY",
-                    "default": "",
-                    "description": ""
-                },
-                {
-                    "name": "A_RECORD_NAME",
-                    "label": "A_RECORD_NAME",
-                    "default": "home.acarling.au",
-                    "description": "A record name which will be updated on IP change"
-                },
-                {
-                    "name": "HOSTED_ZONE_ID",
-                    "label": "HOSTED_ZONE_ID",
-                    "default": "",
-                    "description": ""
-                },
-                {
-                    "name": "POLL_TIMEOUT_SECONDS",
-                    "label": "POLL_TIMEOUT_SECONDS",
-                    "default": "5",
-                    "description": "Number of seconds between requests to public facing IP address readback api"
-                }
-            ],
+            "env": [],
             "ports": [
                 "8001:80/tcp"
             ],
             "volumes": [
-                "/var/cache/ntfy:/var/cache/ntfy",
-                "/etc/ntfy:/etc/ntfy"
+                {
+                    "bind": "/var/cache/ntfy",
+                    "container": "/var/cache/ntfy"
+                },
+                {
+                    "bind": "/etc/ntfy",
+                    "container": "/etc/ntfy"
+                }
             ],
             "restart_policy": "unless-stopped",
             "maintainer": "https://docs.ntfy.sh/install/#docker"
