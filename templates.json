@@ -2046,7 +2046,50 @@
             "platform": "linux",
             "logo": "https://docs.ntfy.sh/static/img/ntfy.png",
             "image": "ghcr.io/acarling/ntfy:latest",
-            "env": [],
+            "env": [
+                {
+                    "name": "NTFY_BASE_URL",
+                    "label": "NTFY_BASE_URL",
+                    "default": "http://ntfy.example.com",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_CACHE_FILE",
+                    "label": "NTFY_CACHE_FILE",
+                    "default": "/var/lib/ntfy/cache.db",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_AUTH_FILE",
+                    "label": "NTFY_AUTH_FILE",
+                    "default": "/var/lib/ntfy/auth.db",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_AUTH_DEFAULT_ACCESS",
+                    "label": "NTFY_AUTH_DEFAULT_ACCESS",
+                    "default": "deny-all",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_BEHIND_PROXY",
+                    "label": "NTFY_BEHIND_PROXY",
+                    "default": "true",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_ATTACHMENT_CACHE_DIR",
+                    "label": "NTFY_ATTACHMENT_CACHE_DIR",
+                    "default": "/var/lib/ntfy/attachments",
+                    "description": ""
+                },
+                {
+                    "name": "NTFY_ENABLE_LOGIN",
+                    "label": "NTFY_ENABLE_LOGIN",
+                    "default": "true",
+                    "description": ""
+                }
+            ],
             "ports": [
                 "8001:80/tcp"
             ],
