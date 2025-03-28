@@ -1998,14 +1998,14 @@
             "image": "ghcr.io/acarling/ddns:latest",
             "env": [
                 {
-                    "name": "AWS_ACCESS_KEY_ID",
-                    "label": "AWS_ACCESS_KEY_ID",
+                    "name": "AWS_ACCESS_KEY",
+                    "label": "AWS_ACCESS_KEY",
                     "default": "",
                     "description": "IAM access key for user with GetChange,ListHostedZones,ChangeResourceRecordSets, and ListResourceRecordSets permissions"
                 },
                 {
-                    "name": "AWS_SECRET_ACCESS_KEY",
-                    "label": "AWS_SECRET_ACCESS_KEY",
+                    "name": "AWS_ACCESS_SECRET",
+                    "label": "AWS_ACCESS_SECRET",
                     "default": "",
                     "description": ""
                 },
@@ -2036,26 +2036,26 @@
         {
             "id": 75,
             "categories": [
-              "Other",
-              "Tools"
+                "Other",
+                "Tools"
             ],
             "description": "A simple server for sending and receiving messages",
             "env": [
-              {
-                "default": "America/New_York",
-                "label": "TZ",
-                "name": "TZ"
-              },
-              {
-                "default": "admin",
-                "label": "GOTIFY_DEFAULTUSER_NAME",
-                "name": "GOTIFY_DEFAULTUSER_NAME"
-              },
-              {
-                "default": "admin123",
-                "label": "GOTIFY_DEFAULTUSER_PASS",
-                "name": "GOTIFY_DEFAULTUSER_PASS"
-              }
+                {
+                    "default": "America/New_York",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "admin",
+                    "label": "GOTIFY_DEFAULTUSER_NAME",
+                    "name": "GOTIFY_DEFAULTUSER_NAME"
+                },
+                {
+                    "default": "admin123",
+                    "label": "GOTIFY_DEFAULTUSER_PASS",
+                    "name": "GOTIFY_DEFAULTUSER_PASS"
+                }
             ],
             "image": "gotify/server-arm7:latest",
             "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/gotify.png",
@@ -2063,18 +2063,18 @@
             "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://gotify.net/\" target=\"_blank\">https://gotify.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://gotify.net/docs/install\" target=\"_blank\">https://gotify.net/docs/install</a><br><br><br>ARM7 Image. Documentation is Available <a href='https://gotify.net/docs/index'>here</a>.",
             "platform": "linux",
             "ports": [
-              "9008:80/tcp"
+                "9008:80/tcp"
             ],
             "restart_policy": "unless-stopped",
             "title": "Gotify",
             "type": 1,
             "volumes": [
-              {
-                "bind": "/portainer/Files/AppData/Config/gotify",
-                "container": "/app/data"
-              }
+                {
+                    "bind": "/portainer/Files/AppData/Config/gotify",
+                    "container": "/app/data"
+                }
             ],
             "maintainer": " https://github.com/novaspirit/pi-hosted/"
-          }      
+        }
     ]
 }
