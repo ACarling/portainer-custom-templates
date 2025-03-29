@@ -2079,52 +2079,31 @@
         {
             "id": 76,
             "categories": [
-                "Cloud",
-                "Productivity",
-                "Tools",
                 "Other",
-                "Web"
+                "Tools"
             ],
-            "description": "Seafile file manager.",
-            "env": [
-                {
-                    "name": "SEAFILE_NAME",
-                    "label": "SEAFILE_NAME",
-                    "default": "",
-                    "description": "Name of your Seafile installation"
-                },
-                {
-                    "name": "SEAFILE_ADDRESS",
-                    "label": "SEAFILE_ADDRESS",
-                    "default": "",
-                    "description": "URL to your Seafile installation"
-                },
-                {
-                    "name": "SEAFILE_ADMIN",
-                    "label": "SEAFILE_ADMIN",
-                    "default": "",
-                    "description": "E-mail address of the Seafile admin"
-                },
-                {
-                    "name": "SEAFILE_ADMIN_PW",
-                    "label": "SEAFILE_ADMIN_PW",
-                    "default": "",
-                    "description": "Password of the Seafile admin"
-                }
+            "description": "Web File Browser which can be used as a middleware or standalone app.",
+            "image": "80x86/filebrowser:latest",
+            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/filebrowser.png",
+            "name": "filebrowser",
+            "note": "The default user and password is admin/admin.",
+            "platform": "linux",
+            "ports": [
+                "8082:8082/tcp"
             ],
+            "restart_policy": "unless-stopped",
+            "title": "FileBrowser",
+            "type": 1,
             "volumes": [
                 {
-                    "bind": "/portainer/Files/AppData/seafile",
-                    "container": "/seafile"
+                    "bind": "/portainer/Files/AppData/Config/FileBrowser",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/portainer/Files/AppData/Config",
+                    "container": "/myfiles"
                 }
             ],
-            "logo": "https://manual.seafile.com/11.0/media/seafile-transparent-1024.png",
-            "name": "Seafile",
-            "note": "",
-            "platform": "linux",
-            "image": "ghcr.io/h44z/seafile-docker-ce:latest",
-            "title": "Seafile",
-            "type": 3,
             "maintainer": " https://github.com/Qballjos/portainer_templates/"
         }
     ]
