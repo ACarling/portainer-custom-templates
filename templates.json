@@ -2079,65 +2079,52 @@
         {
             "id": 76,
             "categories": [
-                "Cloud",
-                "Productivity",
-                "Tools",
-                "Other"
+              "Cloud",
+              "Productivity",
+              "Tools",
+              "Other",
+              "Web"
             ],
-            "description": "ProjectSend is a self-hosted application that lets you upload files and assign them to specific clients that you create yourself! Secure, private and easy. No more depending on external services or e-mail to send those files.",
+            "description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
             "env": [
-                {
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "password",
-                    "label": "MYSQL_ROOT_PASSWORD",
-                    "name": "MYSQL_ROOT_PASSWORD"
-                },
-                {
-                    "default": "projectsend",
-                    "label": "MYSQL_DATABASE",
-                    "name": "MYSQL_DATABASE"
-                },
-                {
-                    "default": "projectsend",
-                    "label": "MYSQL_USER",
-                    "name": "MYSQL_USER"
-                },
-                {
-                    "default": "projectsend",
-                    "label": "MYSQL_PASSWORD",
-                    "name": "MYSQL_PASSWORD"
-                }          
+              {
+                "default": "1000",
+                "label": "PUID",
+                "name": "PUID"
+              },
+              {
+                "default": "100",
+                "label": "PGID",
+                "name": "PGID"
+              },
+              {
+                "label": "TZ",
+                "name": "TZ"
+              },
+              {
+                "label": "DATABASE_PASSWORD",
+                "name": "DATABASE_PASSWORD"
+              },
+              {
+                "label": "MYSQL_ROOT_PASSWORD",
+                "name": "MYSQL_ROOT_PASSWORD"
+              },
+              {
+                "label": "PORT",
+                "name": "PORT"
+              }
             ],
-            "image": "linuxserver/projectsend:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/projectsend-logo.png",
-            "name": "projectsend",
+            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/nextcloud-icon.png",
+            "name": "nextcloud",
+            "note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
             "platform": "linux",
-            "ports": [
-                "80/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "ProjectSend",
-            "type": 1,
-            "volumes": [
-                {
-                    "bind": "/portainer/Files/AppData/ProjectSend",
-                    "container": "/data"
-                },
-                {
-                    "bind": "/portainer/Files/AppData/Config/ProjectSend",
-                    "container": "/config"
-                }
-            ],
+            "repository": {
+              "stackfile": "Template/Stack/nextcloud.yml",
+              "url": "https://github.com/Qballjos/portainer_templates"
+            },
+            "title": "Nextcloud",
+            "type": 3,
             "maintainer": " https://github.com/Qballjos/portainer_templates/"
-        }
+          }      
     ]
 }
