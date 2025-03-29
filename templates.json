@@ -2079,52 +2079,143 @@
         {
             "id": 76,
             "categories": [
-              "Cloud",
-              "Productivity",
-              "Tools",
-              "Other",
-              "Web"
+                "Cloud",
+                "Productivity",
+                "Tools",
+                "Other",
+                "Web"
             ],
-            "description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
+            "description": "Seafile file manager.",
             "env": [
-              {
-                "default": "1000",
-                "label": "PUID",
-                "name": "PUID"
-              },
-              {
-                "default": "100",
-                "label": "PGID",
-                "name": "PGID"
-              },
-              {
-                "label": "TZ",
-                "name": "TZ"
-              },
-              {
-                "label": "DATABASE_PASSWORD",
-                "name": "DATABASE_PASSWORD"
-              },
-              {
-                "label": "MYSQL_ROOT_PASSWORD",
-                "name": "MYSQL_ROOT_PASSWORD"
-              },
-              {
-                "label": "PORT",
-                "name": "PORT"
-              }
+                {
+                    "name": "SERVER_NAME",
+                    "label": "SERVER_NAME",
+                    "default": "seafile",
+                    "description": "Name of the server"
+                },
+                {
+                    "name": "SERVER_ADDRESS",
+                    "label": "SERVER_ADDRESS",
+                    "default": "127.0.0.1",
+                    "description": "IP or domain name of the server"
+                },
+                {
+                    "name": "FASTCGI",
+                    "label": "FASTCGI",
+                    "default": "false",
+                    "description": "If true, run Seafile in fastcgi mode"
+                },
+                {
+                    "name": "SEAFILE_ADMIN",
+                    "label": "SEAFILE_ADMIN",
+                    "default": "",
+                    "description": "Email for the admin account (required)"
+                },
+                {
+                    "name": "SEAFILE_ADMIN_PASSWORD",
+                    "label": "SEAFILE_ADMIN_PASSWORD",
+                    "default": "",
+                    "description": "Password for the admin account (required)"
+                },
+                {
+                    "name": "MYSQL_SERVER",
+                    "label": "MYSQL_SERVER",
+                    "default": "",
+                    "description": "MySQL/Maria DB Server name or IP (set if using MySQL instead of SQLite)"
+                },
+                {
+                    "name": "MYSQL_PORT",
+                    "label": "MYSQL_PORT",
+                    "default": "3306",
+                    "description": "Port used by the MySQL database server"
+                },
+                {
+                    "name": "MYSQL_ROOT_PASSWORD",
+                    "label": "MYSQL_ROOT_PASSWORD",
+                    "default": "",
+                    "description": "Root user password needed for creating databases (required if MYSQL_SERVER is set)"
+                },
+                {
+                    "name": "MYSQL_USER",
+                    "label": "MYSQL_USER",
+                    "default": "",
+                    "description": "MySQL user used by Seafile (required if MYSQL_SERVER is set)"
+                },
+                {
+                    "name": "MYSQL_USER_PASSWORD",
+                    "label": "MYSQL_USER_PASSWORD",
+                    "default": "",
+                    "description": "Password for MYSQL_USER (required if MYSQL_SERVER is set)"
+                },
+                {
+                    "name": "MYSQL_CCNET_DB",
+                    "label": "MYSQL_CCNET_DB",
+                    "default": "ccnet-db",
+                    "description": "Name of the CCNET database"
+                },
+                {
+                    "name": "MYSQL_SEAFILE_DB",
+                    "label": "MYSQL_SEAFILE_DB",
+                    "default": "seafile-db",
+                    "description": "Name of the SEAFILE database"
+                },
+                {
+                    "name": "MYSQL_SEAHUB_DB",
+                    "label": "MYSQL_SEAHUB_DB",
+                    "default": "seahub-db",
+                    "description": "Name of the SEAHUB database"
+                },
+                {
+                    "name": "LDAP_URL",
+                    "label": "LDAP_URL",
+                    "default": "",
+                    "description": "LDAP URL (e.g. ldap://openldap)"
+                },
+                {
+                    "name": "LDAP_BASE",
+                    "label": "LDAP_BASE",
+                    "default": "",
+                    "description": "LDAP BASE (e.g. ou=people,dc=example,dc=org) (required if LDAP_URL is set)"
+                },
+                {
+                    "name": "LDAP_LOGIN_ATTR",
+                    "label": "LDAP_LOGIN_ATTR",
+                    "default": "",
+                    "description": "LDAP Login attribute (e.g. mail) (required if LDAP_URL is set)"
+                },
+                {
+                    "name": "LDAP_USER_DN",
+                    "label": "LDAP_USER_DN",
+                    "default": "",
+                    "description": "LDAP user DN (e.g. cn=admin,dc=example,dc=org) (optional)"
+                },
+                {
+                    "name": "LDAP_PASSWORD",
+                    "label": "LDAP_PASSWORD",
+                    "default": "",
+                    "description": "LDAP user password (optional)"
+                },
+                {
+                    "name": "REVERSE_PROXY_MODE",
+                    "label": "REVERSE_PROXY_MODE",
+                    "default": "HTTP",
+                    "description": "Configure Seafile to run behind a reverse proxy. Set to HTTP or HTTPS."
+                }
             ],
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/nextcloud-icon.png",
-            "name": "nextcloud",
-            "note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
+            "volumes": [
+                {
+                    "bind": "/portainer/Files/AppData/seafile",
+                    "container": "/seafile"
+                }
+            ],
+            "logo": "https://manual.seafile.com/11.0/media/seafile-transparent-1024.png",
+            "name": "Seafile",
+            "note": "",
             "platform": "linux",
-            "repository": {
-              "stackfile": "Template/Stack/nextcloud.yml",
-              "url": "https://github.com/Qballjos/portainer_templates"
-            },
-            "title": "Nextcloud",
+            "image": "sabaitech/seafile",
+            "title": "Seafile",
             "type": 3,
             "maintainer": " https://github.com/Qballjos/portainer_templates/"
-          }      
+        }
     ]
 }
