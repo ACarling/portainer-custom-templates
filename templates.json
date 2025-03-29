@@ -2042,7 +2042,7 @@
             "description": "A simple server for sending and receiving messages",
             "env": [
                 {
-                    "default": "America/New_York",
+                    "default": "Australia/Melbourne",
                     "label": "TZ",
                     "name": "TZ"
                 },
@@ -2095,7 +2095,27 @@
                     "default": "100",
                     "label": "PGID",
                     "name": "PGID"
-                }
+                },
+                {
+                    "default": "password",
+                    "label": "MYSQL_ROOT_PASSWORD",
+                    "name": "MYSQL_ROOT_PASSWORD"
+                },
+                {
+                    "default": "projectsend",
+                    "label": "MYSQL_DATABASE",
+                    "name": "MYSQL_DATABASE"
+                },
+                {
+                    "default": "projectsend",
+                    "label": "MYSQL_USER",
+                    "name": "MYSQL_USER"
+                },
+                {
+                    "default": "projectsend",
+                    "label": "MYSQL_PASSWORD",
+                    "name": "MYSQL_PASSWORD"
+                }          
             ],
             "image": "linuxserver/projectsend:latest",
             "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/projectsend-logo.png",
