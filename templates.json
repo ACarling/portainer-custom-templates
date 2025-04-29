@@ -1872,7 +1872,7 @@
             ],
             "maintainer": " https://github.com/mediadepot/templates/"
         },
-		{
+	{
             "id": 72,
 			"categories": [
 				"Other",
@@ -1918,7 +1918,7 @@
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stack/wireguard-easy.yml",
-				"url": "https://github.com/pi-hosted/pi-hosted"
+				"url": "https://github.com/ACarling/portainer-custom-templates"
 			},
 			"title": "Wireguard Server",
 			"type": 3,
