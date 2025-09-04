@@ -2117,6 +2117,12 @@
             "ports": [
                 "80:8080/tcp"
             ],
+            "volumes": [
+                {
+                    "bind": "/portainer/Files/AppData/miniflux",
+                    "container": "/var/lib/postgresql/data"
+                }
+            ],
             "restart_policy": "unless-stopped",
             "title": "Miniflux",
             "type": 1,
