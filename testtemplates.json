@@ -1,0 +1,27 @@
+{
+    "version": "3",
+    "templates": [
+        {
+            "id": 1,
+            "type": 1,
+            "title": "SmartDNS",
+            "name": "smartdns",
+            "description": "A fast DNS resolver for local network",
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/pymumu/smartdns/master/docs/smartdns-logo.png",
+            "image": "pymumu/smartdns:latest",
+            "ports": [
+                "53:53/udp",
+                "53:53/tcp",
+                "6080:6080"
+            ],
+            "volumes": [
+                {
+                    "bind": "/etc/smartdns",
+                    "container": "/etc/smartdns"
+                }
+            ],
+            "restart_policy": "always"
+        }
+    ]
+}
