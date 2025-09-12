@@ -2177,94 +2177,22 @@
                     "description": "DNS web console admin user password."
                 },
                 {
-                    "name": "DNS_SERVER_ADMIN_PASSWORD_FILE",
-                    "label": "Admin Password File",
-                    "description": "Path to a file containing the admin password."
-                },
-                {
-                    "name": "DNS_SERVER_PREFER_IPV6",
-                    "label": "Prefer IPv6",
-                    "default": "false",
-                    "description": "Use IPv6 for querying whenever possible."
-                },
-                {
-                    "name": "DNS_SERVER_WEB_SERVICE_LOCAL_ADDRESSES",
-                    "label": "Web Service Local Addresses",
-                    "description": "Comma separated list of network interface IP addresses for web service."
-                },
-                {
                     "name": "DNS_SERVER_WEB_SERVICE_HTTP_PORT",
                     "label": "Web Console HTTP Port",
                     "default": "5380",
                     "description": "TCP port for DNS web console over HTTP."
                 },
                 {
-                    "name": "DNS_SERVER_WEB_SERVICE_HTTPS_PORT",
-                    "label": "Web Console HTTPS Port",
-                    "description": "TCP port for DNS web console over HTTPS."
-                },
-                {
                     "name": "DNS_SERVER_WEB_SERVICE_ENABLE_HTTPS",
                     "label": "Enable HTTPS",
-                    "default": "false",
+                    "default": "true",
                     "description": "Enable HTTPS for the DNS web console."
-                },
-                {
-                    "name": "DNS_SERVER_WEB_SERVICE_USE_SELF_SIGNED_CERT",
-                    "label": "Use Self-Signed Cert",
-                    "default": "false",
-                    "description": "Enable self-signed TLS certificate for the DNS web console."
-                },
-                {
-                    "name": "DNS_SERVER_OPTIONAL_PROTOCOL_DNS_OVER_HTTP",
-                    "label": "Enable DNS-over-HTTP",
-                    "default": "false",
-                    "description": "Enable DNS-over-HTTP protocol."
                 },
                 {
                     "name": "DNS_SERVER_RECURSION",
                     "label": "Recursion Option",
                     "default": "AllowOnlyForPrivateNetworks",
                     "description": "Recursion options: Allow, Deny, AllowOnlyForPrivateNetworks, UseSpecifiedNetworkACL."
-                },
-                {
-                    "name": "DNS_SERVER_RECURSION_NETWORK_ACL",
-                    "label": "Recursion Network ACL",
-                    "description": "Comma separated list of IP/network addresses to allow/deny recursion."
-                },
-                {
-                    "name": "DNS_SERVER_ENABLE_BLOCKING",
-                    "label": "Enable Blocking",
-                    "default": "false",
-                    "description": "Block domain names using Blocked Zone and Block List Zone."
-                },
-                {
-                    "name": "DNS_SERVER_ALLOW_TXT_BLOCKING_REPORT",
-                    "label": "Allow TXT Blocking Report",
-                    "default": "false",
-                    "description": "Respond with TXT records for blocked domains."
-                },
-                {
-                    "name": "DNS_SERVER_BLOCK_LIST_URLS",
-                    "label": "Block List URLs",
-                    "description": "Comma separated list of block list URLs."
-                },
-                {
-                    "name": "DNS_SERVER_FORWARDERS",
-                    "label": "Forwarders",
-                    "description": "Comma separated list of forwarder addresses."
-                },
-                {
-                    "name": "DNS_SERVER_FORWARDER_PROTOCOL",
-                    "label": "Forwarder Protocol",
-                    "default": "Tcp",
-                    "description": "Forwarder protocol options: Udp, Tcp, Tls, Https, HttpsJson."
-                },
-                {
-                    "name": "DNS_SERVER_LOG_USING_LOCAL_TIME",
-                    "label": "Log Using Local Time",
-                    "default": "true",
-                    "description": "Use local time for logging."
                 }
             ],
             "volumes": [
