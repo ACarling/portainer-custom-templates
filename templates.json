@@ -2157,7 +2157,7 @@
             "name": "dns-server",
             "description": "Technitium DNS Server with web console and DNS service",
             "platform": "linux",
-            "logo": "https://technitium.com/images/dns-server-logo.png",
+            "logo": "https://technitium.com/img/logo25x25.png",
             "image": "technitium/dns-server:latest",
             "ports": [
                 "5380:5380/tcp",
@@ -2216,7 +2216,7 @@
             "name": "syncthing",
             "description": "Continuous file synchronization program",
             "platform": "linux",
-            "logo": "https://syncthing.net/images/logo-horizontal.svg",
+            "logo": "https://www.gravatar.com/avatar/8a30cc532c3ff981fa47333b1d195f03?s=120&r=g&d=404",
             "image": "lscr.io/linuxserver/syncthing:latest",
             "env": [
                 {
