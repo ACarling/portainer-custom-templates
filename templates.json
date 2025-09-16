@@ -2208,6 +2208,53 @@
                     "value": "1024 65000"
                 }
             ]
+        },
+        {
+            "id": 79,
+            "type": 1,
+            "title": "Syncthing",
+            "name": "syncthing",
+            "description": "Continuous file synchronization program",
+            "platform": "linux",
+            "logo": "https://syncthing.net/images/logo-horizontal.svg",
+            "image": "lscr.io/linuxserver/syncthing:latest",
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1000",
+                    "description": "User ID to run Syncthing"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "1000",
+                    "description": "Group ID to run Syncthing"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Timezone",
+                    "default": "Etc/UTC",
+                    "description": "Timezone for container"
+                }
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/path/to/syncthing/config"
+                },
+                {
+                    "container": "/data",
+                    "bind": "/path/to/data1"
+                }
+            ],
+            "ports": [
+                "8384:8384/tcp",
+                "22000:22000/tcp",
+                "22000:22000/udp",
+                "21027:21027/udp"
+            ],
+            "restart_policy": "unless-stopped"
         }
     ]
 }
