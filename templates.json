@@ -2255,6 +2255,30 @@
                 "21027:21027/udp"
             ],
             "restart_policy": "unless-stopped"
+        },
+        {
+            "id": 80,
+            "type": 1,
+            "title": "GoAccess",
+            "name": "goaccess",
+            "description": "Real-time web log analyzer and interactive viewer",
+            "platform": "linux",
+            "logo": "https://goaccess.io/assets/ico/favicon.ico",
+            "image": "gregyankovoy/goaccess:latest",
+            "ports": [
+                "7889:7889"
+            ],
+            "volumes": [
+                {
+                    "container": "/opt/log",
+                    "bind": "/path/to/host/nginx/logs"
+                },
+                {
+                    "container": "/config",
+                    "bind": "/path/to/goaccess/storage"
+                }
+            ],
+            "restart_policy": "unless-stopped"
         }
     ]
 }
