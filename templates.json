@@ -2279,6 +2279,39 @@
                 }
             ],
             "restart_policy": "unless-stopped"
+        },
+        {
+            "id": 81,
+            "type": 1,
+            "title": "Tailscale (Standalone)",
+            "name": "tailscaled",
+            "description": "Standalone Tailscale container for secure networking",
+            "platform": "linux",
+            "logo": "https://tailscale.com/favicon.png",
+            "image": "tailscale/tailscale:latest",
+            "env": [
+                {
+                    "name": "TS_AUTHKEY",
+                    "label": "Tailscale Auth Key",
+                    "default": "tskey-auth-...",
+                    "description": "Tailscale authentication key"
+                }
+            ],
+            "volumes": [
+                {
+                    "container": "/var/lib",
+                    "bind": "/var/lib"
+                },
+                {
+                    "container": "/dev/net/tun",
+                    "bind": "/dev/net/tun"
+                }
+            ],
+            "capabilities": [
+                "NET_ADMIN", "NET_RAW"
+            ],
+            "network_mode": "host",
+            "restart_policy": "unless-stopped"
         }
     ]
 }
