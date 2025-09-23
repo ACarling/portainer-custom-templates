@@ -2312,6 +2312,17 @@
             ],
             "network_mode": "host",
             "restart_policy": "unless-stopped"
+        },
+        {
+            "id": 82,
+            "type": 1,
+            "title": "Net Tools",
+            "name": "net-tools",
+            "description": "Network troubleshooting tools container",
+            "platform": "linux",
+            "logo": "",
+            "image": "rtsp/net-tools:latest",
+            "restart_policy": "unless-stopped"
         }
     ]
 }
